@@ -179,6 +179,7 @@ void AMenuSystemCharacter::CreateGameSession()
 	SessionSettings->bAllowJoinViaPresence = true;
 	SessionSettings->bShouldAdvertise = true;
 	SessionSettings->bUsesPresence = true;
+	SessionSettings->bUseLobbiesIfAvailable = true;
 	const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
 	OnlineSessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *SessionSettings);
 }
