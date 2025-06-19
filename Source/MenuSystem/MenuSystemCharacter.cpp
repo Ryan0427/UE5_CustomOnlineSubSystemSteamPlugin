@@ -179,5 +179,28 @@ void AMenuSystemCharacter::CreateGameSession()
 
 void AMenuSystemCharacter::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
 {
-
+	if (bWasSuccessful)
+	{
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				15.f,
+				FColor::Blue,
+				FString::Printf(TEXT("Created session: %s"), *SessionName.ToString())
+			);
+		}
+	}
+	else
+	{
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				15.f,
+				FColor::Red,
+				FString(TEXT("Failed to create session!"))
+			);
+		}
+	}
 }
