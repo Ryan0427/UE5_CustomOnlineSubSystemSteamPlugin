@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a01581486af43f53da11549769cc900a3f98d1f792fc0b837eeec44347587b47
-size 585
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "EnvironmentQuery/EnvQueryContext.h"
+#include "EnvQueryContext_Player.generated.h"
+
+/**
+ *  UEnvQueryContext_Player
+ *  Basic EnvQuery Context that returns the first local player
+ */
+UCLASS()
+class UEnvQueryContext_Player : public UEnvQueryContext
+{
+	GENERATED_BODY()
+	
+public:
+
+	/** Provides the context locations or actors for this EnvQuery */
+	virtual void ProvideContext(FEnvQueryInstance& QueryInstance, FEnvQueryContextData& ContextData) const override;
+};

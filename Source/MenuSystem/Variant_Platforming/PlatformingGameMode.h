@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fbcec4f455768d68d18d8a9708659529c986568ef91b2090d6ff9d6e4ae4d57
-size 398
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/GameModeBase.h"
+#include "PlatformingGameMode.generated.h"
+
+/**
+ *  Simple GameMode for a third person platforming game
+ */
+UCLASS()
+class APlatformingGameMode : public AGameModeBase
+{
+	GENERATED_BODY()
+	
+public:
+
+	/** Constructor */
+	APlatformingGameMode();
+};

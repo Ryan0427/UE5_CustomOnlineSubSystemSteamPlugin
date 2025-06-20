@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7ba5be23d5972270c787a42534591214b607fae13dfb41ddcc9724f12fc9817
-size 712
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+
+#include "AnimNotify_CheckChargedAttack.h"
+#include "CombatAttacker.h"
+#include "Components/SkeletalMeshComponent.h"
+
+void UAnimNotify_CheckChargedAttack::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, const FAnimNotifyEventReference& EventReference)
+{
+	// cast the owner to the attacker interface
+	if (ICombatAttacker* AttackerInterface = Cast<ICombatAttacker>(MeshComp->GetOwner()))
+	{
+		// tell the actor to check for a charged attack loop
+		AttackerInterface->CheckChargedAttack();
+	}
+}
+
+FString UAnimNotify_CheckChargedAttack::GetNotifyName_Implementation() const
+{
+	return FString("Check Charged Attack");
+}

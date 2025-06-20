@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a03041f0aa841a98ccbc374270ed4b430944821bed0be42d00ed464cbc6dda56
-size 613
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "AIController.h"
+#include "SideScrollingAIController.generated.h"
+
+class UStateTreeAIComponent;
+
+/**
+ *  A basic AI Controller capable of running StateTree
+ */
+UCLASS(abstract)
+class ASideScrollingAIController : public AAIController
+{
+	GENERATED_BODY()
+	
+	/** StateTree Component */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI", meta = (AllowPrivateAccess = "true"))
+	UStateTreeAIComponent* StateTreeAI;
+
+public:
+
+	/** Constructor */
+	ASideScrollingAIController();
+};

@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4546ccbf1135cd0f5ff6fa6bf7d2e22f3bcc5968ee01f40efad67235a9183e9
-size 820
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+
+#include "SideScrollingMovingPlatform.h"
+#include "Components/SceneComponent.h"
+
+ASideScrollingMovingPlatform::ASideScrollingMovingPlatform()
+{
+	PrimaryActorTick.bCanEverTick = false;
+
+	// create the root comp
+	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+}
+
+void ASideScrollingMovingPlatform::Interaction(AActor* Interactor)
+{
+	// ignore interactions if we're already moving
+	if (bMoving)
+	{
+		return;
+	}
+
+	// raise the movement flag
+	bMoving = true;
+
+	// pass control to BP for the actual movement
+	BP_MoveToTarget();
+}
+
+void ASideScrollingMovingPlatform::ResetInteraction()
+{
+	// ignore if this is a one-shot platform
+	if (bOneShot)
+	{
+		return;
+	}
+
+	// reset the movement flag
+	bMoving = false;
+}
