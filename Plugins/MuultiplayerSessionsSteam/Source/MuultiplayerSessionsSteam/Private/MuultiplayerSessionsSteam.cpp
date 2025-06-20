@@ -1,20 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-#include "MuultiplayerSessionsSteam.h"
-
-#define LOCTEXT_NAMESPACE "FMuultiplayerSessionsSteamModule"
-
-void FMuultiplayerSessionsSteamModule::StartupModule()
-{
-	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-}
-
-void FMuultiplayerSessionsSteamModule::ShutdownModule()
-{
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
-}
-
-#undef LOCTEXT_NAMESPACE
-	
-IMPLEMENT_MODULE(FMuultiplayerSessionsSteamModule, MuultiplayerSessionsSteam)
+version https://git-lfs.github.com/spec/v1
+oid sha256:95e8a798fdc8a4f65bac943fdafcd0c475c5b260142345deb8fe19cd2da36669
+size 701

@@ -1,29 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-#pragma once
-
-#include "CoreMinimal.h"
-#include "GameFramework/PlayerController.h"
-#include "MenuSystemPlayerController.generated.h"
-
-class UInputMappingContext;
-
-/**
- *  Basic PlayerController class for a third person game
- *  Manages input mappings
- */
-UCLASS(abstract)
-class AMenuSystemPlayerController : public APlayerController
-{
-	GENERATED_BODY()
-	
-protected:
-
-	/** Input Mapping Contexts */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category ="Input", meta = (AllowPrivateAccess = "true"))
-	TArray<UInputMappingContext*> DefaultMappingContexts;
-
-	/** Input mapping context setup */
-	virtual void SetupInputComponent() override;
-
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:0beaa59ee45a9b87db97f0fc27638c5438aa5b5e6bfea3945d7cd96dbecf47c6
+size 722

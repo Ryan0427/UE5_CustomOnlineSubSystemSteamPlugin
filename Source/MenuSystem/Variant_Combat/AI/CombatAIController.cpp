@@ -1,19 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-
-#include "CombatAIController.h"
-#include "Components/StateTreeAIComponent.h"
-
-ACombatAIController::ACombatAIController()
-{
-	// create the StateTree AI Component
-	StateTreeAI = CreateDefaultSubobject<UStateTreeAIComponent>(TEXT("StateTreeAI"));
-	check(StateTreeAI);
-
-	// ensure we start the StateTree when we possess the pawn
-	bStartAILogicOnPossess = true;
-
-	// ensure we're attached to the possessed character.
-	// this is necessary for EnvQueries to work correctly
-	bAttachToPawn = true;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4f3908cdb97373de0c7680c58cd914d22c5c46261ff1aa515d37cad8a1b516bf
+size 564

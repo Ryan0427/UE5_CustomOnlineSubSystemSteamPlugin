@@ -1,23 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-#pragma once
-
-#include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
-#include "SideScrollingUI.generated.h"
-
-/**
- *  Simple Side Scrolling game UI
- *  Displays and manages a pickup counter
- */
-UCLASS(abstract)
-class USideScrollingUI : public UUserWidget
-{
-	GENERATED_BODY()
-	
-public:
-
-	/** Update the widget's pickup counter */
-	UFUNCTION(BlueprintImplementableEvent, Category="UI")
-	void UpdatePickups(int32 Amount);
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:d5c7899c6d98edc402e5aa4bf677caaa0d03609e59427c77ec647f35df126e07
+size 500

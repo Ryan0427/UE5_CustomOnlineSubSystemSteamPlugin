@@ -1,7 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-#include "MenuSystem.h"
-#include "Modules/ModuleManager.h"
-
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, MenuSystem, "MenuSystem" );
- 
+version https://git-lfs.github.com/spec/v1
+oid sha256:deec9d1695aac5f77bccdcaa1c66246fe0e5822fb9bbc031e347c8fb6014ceff
+size 202
