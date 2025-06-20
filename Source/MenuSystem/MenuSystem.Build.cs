@@ -22,7 +22,9 @@ public class MenuSystem : ModuleRules
 			"OnlineSubsystem"
 		});
 
-		PrivateDependencyModuleNames.AddRange(new string[] { });
+		PrivateDependencyModuleNames.AddRange(new string[] {
+            "UMG"
+        });
 
 		PublicIncludePaths.AddRange(new string[] {
 			"MenuSystem",
