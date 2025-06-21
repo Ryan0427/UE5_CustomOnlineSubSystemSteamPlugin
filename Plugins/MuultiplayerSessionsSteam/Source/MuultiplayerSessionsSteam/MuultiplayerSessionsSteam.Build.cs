@@ -31,7 +31,7 @@ public class MuultiplayerSessionsSteam : ModuleRules
 				"SteamSockets",
                 "UMG",
 				"Slate",
-				"SlateCore"
+				"SlateCore",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

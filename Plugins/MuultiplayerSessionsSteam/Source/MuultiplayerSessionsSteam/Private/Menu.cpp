@@ -3,12 +3,13 @@
 
 #include "Menu.h"
 #include "Components/Button.h"
+#include "MultiplayerSessionSubsystem.h"
 
 void UMenu::MenuSetup()
 {
 	AddToViewport();
 	SetVisibility(ESlateVisibility::Visible);
-	bIsFocusable = true;
+	SetIsFocusable(true);
 
 	UWorld* World = GetWorld();
 	if (World)
@@ -22,6 +23,12 @@ void UMenu::MenuSetup()
 			PlayerController->SetInputMode(InputModeData);
 			PlayerController->SetShowMouseCursor(true);
 		}
+	}
+
+	UGameInstance* GameInstance = GetGameInstance();
+	if (GameInstance)
+	{
+		MultiplayerSessionsSubsystem = GameInstance->GetSubsystem<UMultiplayerSessionSubsystem>();
 	}
 }
 
@@ -55,6 +62,11 @@ void UMenu::HostButtonClicked()
 			FColor::Yellow,
 			FString(TEXT("Host Button Clicked"))
 		);
+	}
+
+	if (MultiplayerSessionsSubsystem)
+	{
+		MultiplayerSessionsSubsystem->CreateSession(4, FString("FreeForAll"));
 	}
 }
 

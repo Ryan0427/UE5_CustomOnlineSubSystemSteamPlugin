@@ -20,7 +20,7 @@ public class MenuSystem : ModuleRules
 			"UMG",
 			"OnlineSubsystemSteam",
 			"OnlineSubsystem"
-		});
+        });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
             "UMG"
