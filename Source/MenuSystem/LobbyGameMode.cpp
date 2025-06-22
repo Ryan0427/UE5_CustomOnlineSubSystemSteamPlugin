@@ -15,24 +15,26 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 
 		if (GEngine)
 		{
-			GEngine->AddOnScreenDebugMessage(
-				1,
-				60.f,
-				FColor::Yellow,
-				FString::Printf(TEXT("Players in game: %d"), NumberOfPlayers)
-			);
-
-			APlayerState* PlayerState = NewPlayer->GetPlayerState<APlayerState>();
-			if (PlayerState)
 			{
-				FString PlayerName = PlayerState->GetPlayerName();
-
 				GEngine->AddOnScreenDebugMessage(
-					1,
+					-1,
 					60.f,
-					FColor::Cyan,
-					FString::Printf(TEXT("%s has joined the game!"), *PlayerName)
+					FColor::Yellow,
+					FString::Printf(TEXT("Players in game: %d"), NumberOfPlayers)
 				);
+				
+				APlayerState* PlayerState = NewPlayer->GetPlayerState<APlayerState>();
+				if (PlayerState)
+				{
+					FString PlayerName = PlayerState->GetPlayerName();
+
+					GEngine->AddOnScreenDebugMessage(
+						-1,
+						60.f,
+						FColor::Cyan,
+						FString::Printf(TEXT("%s has joined the game!"), *PlayerName)
+					);
+				}
 			}
 		}
 	}
@@ -47,7 +49,7 @@ void ALobbyGameMode::Logout(AController* Exiting)
 	{
 		int32 NumberOfPlayers = GameState.Get()->PlayerArray.Num();
 		GEngine->AddOnScreenDebugMessage(
-			1,
+			-1,
 			60.f,
 			FColor::Yellow,
 			FString::Printf(TEXT("Players in game: %d"), NumberOfPlayers - 1)
@@ -56,7 +58,7 @@ void ALobbyGameMode::Logout(AController* Exiting)
 		FString PlayerName = PlayerState->GetPlayerName();
 
 		GEngine->AddOnScreenDebugMessage(
-			1,
+			-1,
 			60.f,
 			FColor::Cyan,
 			FString::Printf(TEXT("%s has exited the game!"), *PlayerName)
