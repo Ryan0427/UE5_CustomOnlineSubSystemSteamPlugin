@@ -19,7 +19,7 @@ public class MenuSystem : ModuleRules
 			"GameplayStateTreeModule",
 			"UMG",
 			"OnlineSubsystemSteam",
-			"OnlineSubsystem"
+			"OnlineSubsystem",
         });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
